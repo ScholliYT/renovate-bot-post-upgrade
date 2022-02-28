@@ -5,7 +5,9 @@
   ],
   "postUpgradeTasks": {
     "commands": [
+      "pwd",
       "cd project",
+      "pwd",
       "pip3 install -r requirements.txt",
       "pip-licenses --ignore-packages pkg-resources --with-urls --format=csv --output-file=third-party-licenses/third-party-licenses.csv",
       "pip-licenses --ignore-packages pkg-resources --summary --output-file=third-party-licenses/third-party-licenses-summary.txt"
