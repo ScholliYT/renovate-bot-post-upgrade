@@ -13,11 +13,11 @@
           "pip-licenses --ignore-packages pkg-resources --with-urls --format=csv --output-file=third-party-licenses/third-party-licenses.csv",
           "pip-licenses --ignore-packages pkg-resources --summary --output-file=third-party-licenses/third-party-licenses-summary.txt"
         ],
-        "fileFilters": [ // files to upload after task execution
+        "fileFilters": [
           "project/third-party-licenses/third-party-licenses.csv",
           "project/third-party-licenses/third-party-licenses-summary.txt"
         ],
-        "executionMode": "branch" // run once per branch
+        "executionMode": "branch"
       }
     }
   ]
