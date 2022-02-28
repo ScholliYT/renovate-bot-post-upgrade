@@ -1,10 +1,8 @@
 module.exports = {
   allowPostUpgradeCommandTemplating: true,
   allowedPostUpgradeCommands: [
-    '^pwd$',
-    '^cd project$',
-    '^pip3 install',
-    '^pip-licenses'
+    '^cd project && pip3 install',
+    '^cd project && pip-licenses'
   ],
 };
   
