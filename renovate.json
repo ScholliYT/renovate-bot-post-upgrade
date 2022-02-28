@@ -8,10 +8,6 @@
       "matchPaths": [
         "project/**"
       ],
-      "groupName": "Project",
-      "addLabels": [
-        "Project"
-      ],
       "postUpgradeTasks": {
         "commands": [
           "cd project && pip3 install -r requirements.txt",
