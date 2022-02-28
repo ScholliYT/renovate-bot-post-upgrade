@@ -3,16 +3,27 @@
   "extends": [
     "config:base"
   ],
-  "postUpgradeTasks": {
-    "commands": [
-      "cd project && pip3 install -r requirements.txt",
-      "cd project && pip-licenses --ignore-packages pkg-resources --with-urls --format=csv --output-file=third-party-licenses/third-party-licenses.csv",
-      "cd project && pip-licenses --ignore-packages pkg-resources --summary --output-file=third-party-licenses/third-party-licenses-summary.txt"
-    ],
-    "fileFilters": [
-      "project/third-party-licenses/third-party-licenses.csv",
-      "project/third-party-licenses/third-party-licenses-summary.txt"
-    ],
-    "executionMode": "branch"
-  }
+  "packageRules": [
+    {
+      "matchPaths": [
+        "project/**"
+      ],
+      "groupName": "Project",
+      "addLabels": [
+        "Project"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "cd project && pip3 install -r requirements.txt",
+          "cd project && pip-licenses --ignore-packages pkg-resources --with-urls --format=csv --output-file=third-party-licenses/third-party-licenses.csv",
+          "cd project && pip-licenses --ignore-packages pkg-resources --summary --output-file=third-party-licenses/third-party-licenses-summary.txt"
+        ],
+        "fileFilters": [
+          "project/third-party-licenses/third-party-licenses.csv",
+          "project/third-party-licenses/third-party-licenses-summary.txt"
+        ],
+        "executionMode": "branch"
+      }
+    }
+  ]
 }
