@@ -1,0 +1,7 @@
+"Name","Version","License","URL"
+"Flask","1.1.2","BSD License","https://palletsprojects.com/p/flask/"
+"Jinja2","3.0.3","BSD License","https://palletsprojects.com/p/jinja/"
+"MarkupSafe","2.1.0","BSD License","https://palletsprojects.com/p/markupsafe/"
+"Werkzeug","2.0.3","BSD License","https://palletsprojects.com/p/werkzeug/"
+"click","8.0.4","BSD License","https://palletsprojects.com/p/click/"
+"itsdangerous","2.1.0","BSD License","https://palletsprojects.com/p/itsdangerous/"
