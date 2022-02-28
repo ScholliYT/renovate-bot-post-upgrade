@@ -1,24 +1,19 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
   ],
-  "packageRules": [
-    {
-      "matchPaths": ["project/**"],
-      "groupName": "Project",
-      "postUpgradeTasks": {
-        "commands": [
-          "cd project",
-          "pip3 install -r requirements.txt",
-          "pip-licenses --ignore-packages pkg-resources --with-urls --format=csv --output-file=third-party-licenses/third-party-licenses.csv",
-          "pip-licenses --ignore-packages pkg-resources --summary --output-file=third-party-licenses/third-party-licenses-summary.txt"
-        ],
-        "fileFilters": [
-          "project/third-party-licenses/third-party-licenses.csv",
-          "project/third-party-licenses/third-party-licenses-summary.txt"
-        ],
-        "executionMode": "branch"
-      }
-    }
-  ]
+  "postUpgradeTasks": {
+    "commands": [
+      "cd project",
+      "pip3 install -r requirements.txt",
+      "pip-licenses --ignore-packages pkg-resources --with-urls --format=csv --output-file=third-party-licenses/third-party-licenses.csv",
+      "pip-licenses --ignore-packages pkg-resources --summary --output-file=third-party-licenses/third-party-licenses-summary.txt"
+    ],
+    "fileFilters": [
+      "project/third-party-licenses/third-party-licenses.csv",
+      "project/third-party-licenses/third-party-licenses-summary.txt"
+    ],
+    "executionMode": "branch"
+  }
 }
